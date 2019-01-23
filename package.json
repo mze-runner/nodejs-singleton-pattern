@@ -1,0 +1,31 @@
+{
+  "name": "singelton_pattern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "debug": "DEBUG=* nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mze-runner/nodejs-singleton-pattern.git"
+  },
+  "keywords": [
+    "mongodb",
+    "singelton",
+    "mongoose"
+  ],
+  "author": "mzerunner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mze-runner/nodejs-singleton-pattern/issues"
+  },
+  "homepage": "https://github.com/mze-runner/nodejs-singleton-pattern#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6"
+  }
+}
