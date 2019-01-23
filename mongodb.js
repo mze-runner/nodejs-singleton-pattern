@@ -81,7 +81,7 @@ var singleton = {};
 
 singleton.init = function(dbs){
     if(typeof dbs !== 'object'){
-        throw new Error('Dbs list is not array...');
+        throw new Error('Dbs list is not an object...');
     }
     for(var db in dbs){
         if(dbs.hasOwnProperty(db) ){

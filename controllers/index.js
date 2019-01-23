@@ -43,7 +43,7 @@ router.get('/api/admins/:adminId', async (req, res, next) => {
 });
 
 // make a request to app database to grab all users
-// and make a record into audit table upon event.
+// and make a record into audit collection upon event.
 router.get('/api/admins/:adminId/users', async (req, res, next) => {
     try{
         const { adminId } = req.params;
@@ -58,9 +58,9 @@ router.get('/api/admins/:adminId/users', async (req, res, next) => {
         // onwards we can checkout whether admin has right for further request
         // I skip any extra logic...
         const userList = await repo.app.user.list();
-        // now reqiest can be audited
+        // now request can be audited
         const audit = await repo.admin.audit.record({admin, action : 'request for list of app users' });
-        // for testing purpose, let's consol log audit monoose object.
+        // for testing purpose, let's consol log audit mongoose object.
         debug('AUDIT RECORD: %O', audit);
         res.send(userList);
     }catch(err){
