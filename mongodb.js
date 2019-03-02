@@ -20,8 +20,8 @@ if(!hasDbs){
 }
 
 // helper function... simply build connection string.
-const _buildConnectionString = function ( { host, port, db, auth, user, password } ) {
-    return auth === 'password' 
+const _buildConnectionString = function ( { host, port, db, authentication, user, password } ) {
+    return authentication === 'password' 
     ? `mongodb://${user}:${password}@${host}:${port}/${db}`
     : `mongodb://${host}:${port}/${db}`;
 };
@@ -38,9 +38,9 @@ const _validate = (must, input) => {
     return errors;
 }
 
-const _getConnection = ({ alias, host, port, db, auth, user, password}) => {
+const _getConnection = ({ alias, host, port, db, authentication, user, password}) => {
 
-    const connString = _buildConnectionString( { host, port, db, auth, user, password } );
+    const connString = _buildConnectionString( { host, port, db, authentication, user, password } );
 
     const conn = mongoose.createConnection(connString, { useNewUrlParser: true }, (err) => {
         if(err) {
